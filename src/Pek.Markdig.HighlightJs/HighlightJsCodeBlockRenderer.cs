@@ -1,11 +1,10 @@
-using System.IO;
 using System.Text;
 using Markdig.Parsers;
 using Markdig.Renderers;
 using Markdig.Renderers.Html;
 using Markdig.Syntax;
 
-namespace Markdig.HighlightJs
+namespace Pek.Markdig.HighlightJs
 {
     public class HighlightJsCodeBlockRenderer : HtmlObjectRenderer<CodeBlock>
     {

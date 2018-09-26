@@ -4,8 +4,8 @@
         <Authors>Paul Knopf</Authors>
         <Description>A Markdig plugin to pre-render code blocks with the highlight.js library.</Description>
         <Copyright>2018</Copyright>
-        <PackageLicenseUrl>https://github.com/pauldotknopf/Markdig.HighlightJs/blob/master/LICENSE</PackageLicenseUrl>
-        <PackageProjectUrl>https://github.com/pauldotknopf/Markdig.HighlightJs</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/pauldotknopf/Markdig.HighlightJs</RepositoryUrl>
+        <PackageLicenseUrl>https://github.com/pauldotknopf/Pek.Markdig.HighlightJs/blob/master/LICENSE</PackageLicenseUrl>
+        <PackageProjectUrl>https://github.com/pauldotknopf/Pek.Markdig.HighlightJs</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/pauldotknopf/Pek.Markdig.HighlightJs</RepositoryUrl>
     </PropertyGroup>
 </Project>

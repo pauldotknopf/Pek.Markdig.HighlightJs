@@ -1,4 +1,4 @@
-namespace Markdig.HighlightJs
+namespace Pek.Markdig.HighlightJs
 {
     public interface IHighlightJsEngine
     {

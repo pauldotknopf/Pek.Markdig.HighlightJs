@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Markdig.HighlightJs\Markdig.HighlightJs.csproj" />
+    <ProjectReference Include="..\..\src\Pek.Markdig.HighlightJs\Pek.Markdig.HighlightJs.csproj" />
   </ItemGroup>
 
 </Project>

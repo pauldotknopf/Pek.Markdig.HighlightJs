@@ -39,18 +39,18 @@ namespace Build
             
             Target("test", () =>
             {
-                RunShell($"dotnet test {ExpandPath("./test/Markdig.HighlightJs.Tests/")} {commandBuildArgs}");
+                RunShell($"dotnet test {ExpandPath("./test/Pek.Markdig.HighlightJs.Tests/")} {commandBuildArgs}");
             });
 
             Target("build", () =>
             {
-                RunShell($"dotnet build {ExpandPath("./Markdig.HighlightJs.sln")} {commandBuildArgsWithVersion}");
+                RunShell($"dotnet build {ExpandPath("./Pek.Markdig.HighlightJs.sln")} {commandBuildArgsWithVersion}");
             });
 
             Target("deploy", DependsOn("clean"), () =>
             {
                 // Deploy our nuget packages.
-                RunShell($"dotnet pack {ExpandPath("./Markdig.HighlightJs.sln")} --output {ExpandPath("./output")} {commandBuildArgsWithVersion}");
+                RunShell($"dotnet pack {ExpandPath("./Pek.Markdig.HighlightJs.sln")} --output {ExpandPath("./output")} {commandBuildArgsWithVersion}");
             });
             
             Target("update-version", () =>
