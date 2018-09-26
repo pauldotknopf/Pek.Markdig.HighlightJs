@@ -4,4 +4,10 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="JavaScriptEngineSwitcher.Core" Version="2.4.10" />
+    <PackageReference Include="Jurassic" Version="3.0.0-alpha2" />
+    <PackageReference Include="Markdig" Version="0.15.2" />
+  </ItemGroup>
+
 </Project>
