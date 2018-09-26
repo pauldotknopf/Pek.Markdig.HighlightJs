@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26124.0
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FB10CE46-C1ED-4615-A1C6-CAF06FEE6697}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Markdig.HighlightJs", "src\Markdig.HighlightJs\Markdig.HighlightJs.csproj", "{21BA1D7D-B496-40DB-8F61-A02D31C952F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{B5DF7483-7183-4539-9854-C2AA9E0FF21E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Markdig.HighlightJs.Tests", "test\Markdig.HighlightJs.Tests\Markdig.HighlightJs.Tests.csproj", "{716CF27B-70F0-41F8-BAA4-C81F278FE019}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21BA1D7D-B496-40DB-8F61-A02D31C952F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21BA1D7D-B496-40DB-8F61-A02D31C952F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21BA1D7D-B496-40DB-8F61-A02D31C952F4}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{21BA1D7D-B496-40DB-8F61-A02D31C952F4}.Debug|x64.Build.0 = Debug|Any CPU
+		{21BA1D7D-B496-40DB-8F61-A02D31C952F4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{21BA1D7D-B496-40DB-8F61-A02D31C952F4}.Debug|x86.Build.0 = Debug|Any CPU
+		{21BA1D7D-B496-40DB-8F61-A02D31C952F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21BA1D7D-B496-40DB-8F61-A02D31C952F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21BA1D7D-B496-40DB-8F61-A02D31C952F4}.Release|x64.ActiveCfg = Release|Any CPU
+		{21BA1D7D-B496-40DB-8F61-A02D31C952F4}.Release|x64.Build.0 = Release|Any CPU
+		{21BA1D7D-B496-40DB-8F61-A02D31C952F4}.Release|x86.ActiveCfg = Release|Any CPU
+		{21BA1D7D-B496-40DB-8F61-A02D31C952F4}.Release|x86.Build.0 = Release|Any CPU
+		{716CF27B-70F0-41F8-BAA4-C81F278FE019}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{716CF27B-70F0-41F8-BAA4-C81F278FE019}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{716CF27B-70F0-41F8-BAA4-C81F278FE019}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{716CF27B-70F0-41F8-BAA4-C81F278FE019}.Debug|x64.Build.0 = Debug|Any CPU
+		{716CF27B-70F0-41F8-BAA4-C81F278FE019}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{716CF27B-70F0-41F8-BAA4-C81F278FE019}.Debug|x86.Build.0 = Debug|Any CPU
+		{716CF27B-70F0-41F8-BAA4-C81F278FE019}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{716CF27B-70F0-41F8-BAA4-C81F278FE019}.Release|Any CPU.Build.0 = Release|Any CPU
+		{716CF27B-70F0-41F8-BAA4-C81F278FE019}.Release|x64.ActiveCfg = Release|Any CPU
+		{716CF27B-70F0-41F8-BAA4-C81F278FE019}.Release|x64.Build.0 = Release|Any CPU
+		{716CF27B-70F0-41F8-BAA4-C81F278FE019}.Release|x86.ActiveCfg = Release|Any CPU
+		{716CF27B-70F0-41F8-BAA4-C81F278FE019}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{21BA1D7D-B496-40DB-8F61-A02D31C952F4} = {FB10CE46-C1ED-4615-A1C6-CAF06FEE6697}
+		{716CF27B-70F0-41F8-BAA4-C81F278FE019} = {B5DF7483-7183-4539-9854-C2AA9E0FF21E}
+	EndGlobalSection
+EndGlobal
