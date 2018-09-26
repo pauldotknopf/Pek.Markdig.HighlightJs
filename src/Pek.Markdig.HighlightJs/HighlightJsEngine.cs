@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using Jurassic;
 
-namespace Markdig.HighlightJs
+namespace Pek.Markdig.HighlightJs
 {
     public class HighlightJsEngine : IHighlightJsEngine
     {
@@ -12,7 +12,7 @@ namespace Markdig.HighlightJs
         {
             _scriptEngine = new ScriptEngine();
             
-            var embeddedResource = typeof(HighlightJsEngine).Assembly.GetManifestResourceStream("Markdig.HighlightJs.Resources.main.js");
+            var embeddedResource = typeof(HighlightJsEngine).Assembly.GetManifestResourceStream("Pek.Markdig.HighlightJs.Resources.main.js");
             if (embeddedResource == null)
             {
                 throw new Exception("Couldn't load embedded main.js");

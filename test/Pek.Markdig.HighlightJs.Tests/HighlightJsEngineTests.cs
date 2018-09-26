@@ -1,7 +1,7 @@
 using FluentAssertions;
 using Xunit;
 
-namespace Markdig.HighlightJs.Tests
+namespace Pek.Markdig.HighlightJs.Tests
 {
     public class HighlightJsEngineTests
     {

@@ -1,4 +1,6 @@
-namespace Markdig.HighlightJs
+using Markdig;
+
+namespace Pek.Markdig.HighlightJs
 {
     public static class HighlightJsExtensions
     {

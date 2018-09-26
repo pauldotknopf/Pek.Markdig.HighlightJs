@@ -1,8 +1,8 @@
-using System;
+using Markdig;
 using Markdig.Renderers;
 using Markdig.Renderers.Html;
 
-namespace Markdig.HighlightJs
+namespace Pek.Markdig.HighlightJs
 {
     public class HighlightJsExtension : IMarkdownExtension
     {

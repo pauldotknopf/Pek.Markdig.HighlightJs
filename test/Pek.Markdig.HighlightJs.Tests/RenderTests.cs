@@ -1,9 +1,10 @@
 using System;
 using FluentAssertions;
+using Markdig;
 using Moq;
 using Xunit;
 
-namespace Markdig.HighlightJs.Tests
+namespace Pek.Markdig.HighlightJs.Tests
 {
     public class RenderTests
     {
