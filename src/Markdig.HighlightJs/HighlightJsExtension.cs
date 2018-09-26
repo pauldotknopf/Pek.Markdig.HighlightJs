@@ -6,6 +6,13 @@ namespace Markdig.HighlightJs
 {
     public class HighlightJsExtension : IMarkdownExtension
     {
+        private readonly IHighlightJsEngine _highlightJsEngine;
+
+        public HighlightJsExtension(IHighlightJsEngine highlightJsEngine)
+        {
+            _highlightJsEngine = highlightJsEngine;
+        }
+        
         public void Setup(MarkdownPipelineBuilder pipeline)
         {
             
@@ -25,7 +32,7 @@ namespace Markdig.HighlightJs
                 htmlRenderer.ObjectRenderers.Remove(originalCodeBlockRenderer);
             }
 
-            htmlRenderer.ObjectRenderers.AddIfNotAlready(new HighlightJsCodeBlockRenderer(originalCodeBlockRenderer));
+            htmlRenderer.ObjectRenderers.AddIfNotAlready(new HighlightJsCodeBlockRenderer(_highlightJsEngine, originalCodeBlockRenderer));
         }
     }
 }

@@ -9,20 +9,37 @@ namespace Markdig.HighlightJs
 {
     public class HighlightJsCodeBlockRenderer : HtmlObjectRenderer<CodeBlock>
     {
+        private readonly IHighlightJsEngine _highlightJsEngine;
         private readonly CodeBlockRenderer _underlyingRenderer;
 
-        public HighlightJsCodeBlockRenderer(CodeBlockRenderer underlyingRenderer = null)
+        public HighlightJsCodeBlockRenderer(
+            IHighlightJsEngine highlightJsEngine,
+            CodeBlockRenderer underlyingRenderer = null)
         {
+            _highlightJsEngine = highlightJsEngine;
             _underlyingRenderer = underlyingRenderer ?? new CodeBlockRenderer();
         }
 
         protected override void Write(HtmlRenderer renderer, CodeBlock obj)
         {
-            renderer.EnsureLine();
-
             var fencedCodeBlock = obj as FencedCodeBlock;
-            var language = fencedCodeBlock?.Info;
+            var parser = obj.Parser as FencedCodeBlockParser;
+            
+            if (fencedCodeBlock == null || parser == null)
+            {
+                _underlyingRenderer.Write(renderer, obj);
+                return;
+            }
 
+            var attributes = obj.TryGetAttributes() ?? new HtmlAttributes();
+
+            var languageMoniker = fencedCodeBlock.Info.Replace(parser.InfoPrefix, string.Empty);
+            if (string.IsNullOrEmpty(languageMoniker))
+            {
+                _underlyingRenderer.Write(renderer, obj);
+                return;
+            }
+            
             if (renderer.EnableHtmlForBlock)
             {
                 renderer.Write("<pre><code");
@@ -30,14 +47,10 @@ namespace Markdig.HighlightJs
                 renderer.Write(">");
             }
 
-            var code = GetCode(obj);
+            var code = _highlightJsEngine.Run(languageMoniker, GetCode(obj));
             renderer.Write(code);
 
-            var engine = new Jurassic.ScriptEngine();
-            engine.ExecuteFile("/Users/pknopf/git/Markdig.HighlightJs/src/Markdig.HighlightJs/Resources/main.js");
-            var r = engine.Evaluate<string>("highlight('csharp', 'public class Test { }')");
-            //var rs = jint.Invoke("test1", "test2");
-
+            
             if (renderer.EnableHtmlForBlock)
             {
                 renderer.WriteLine("</code></pre>");
