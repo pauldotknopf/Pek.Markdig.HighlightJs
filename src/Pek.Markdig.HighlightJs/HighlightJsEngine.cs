@@ -11,6 +11,7 @@ namespace Pek.Markdig.HighlightJs
         public HighlightJsEngine()
         {
             _scriptEngine = new ScriptEngine();
+            _scriptEngine.SetGlobalValue("console", new Jurassic.Library.FirebugConsole(_scriptEngine));
             
             var embeddedResource = typeof(HighlightJsEngine).Assembly.GetManifestResourceStream("Pek.Markdig.HighlightJs.Resources.main.js");
             if (embeddedResource == null)
@@ -32,11 +33,17 @@ namespace Pek.Markdig.HighlightJs
             if(string.IsNullOrEmpty(language)) throw new ArgumentOutOfRangeException(nameof(language));
             if(string.IsNullOrEmpty(code)) throw new ArgumentOutOfRangeException(nameof(language));
 
-            var codeEscaped = code
-                .Replace("\\", "\\\\")
-                .Replace("'", "\\\'");
-            
-            return _scriptEngine.Evaluate<string>($"highlight('{language}', '{codeEscaped}')");
+            var tempVar = $"temp{Guid.NewGuid().ToString().Replace("-", "")}";
+            _scriptEngine.SetGlobalValue(tempVar, code);
+
+            try
+            {
+                return _scriptEngine.Evaluate<string>($"highlight('{language}', {tempVar})");
+            }
+            finally
+            {
+                _scriptEngine.SetGlobalValue(tempVar, null);
+            }
         }
     }
 }
