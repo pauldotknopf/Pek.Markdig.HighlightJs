@@ -30,8 +30,6 @@ namespace Pek.Markdig.HighlightJs
                 return;
             }
 
-            var attributes = obj.TryGetAttributes() ?? new HtmlAttributes();
-
             var languageMoniker = fencedCodeBlock.Info.Replace(parser.InfoPrefix, string.Empty);
             if (string.IsNullOrEmpty(languageMoniker))
             {
@@ -39,10 +37,13 @@ namespace Pek.Markdig.HighlightJs
                 return;
             }
             
+            var attributes = obj.TryGetAttributes() ?? new HtmlAttributes();
+            attributes.AddClass("hljs");
+            
             if (renderer.EnableHtmlForBlock)
             {
                 renderer.Write("<pre><code");
-                renderer.WriteAttributes(obj);
+                renderer.WriteAttributes(attributes);
                 renderer.Write(">");
             }
 

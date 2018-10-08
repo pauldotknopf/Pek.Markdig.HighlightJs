@@ -23,7 +23,7 @@ namespace Pek.Markdig.HighlightJs.Tests
             var result = Markdown.ToHtml(input, pipeline);
             
             highlightJsEngine.Verify(x => x.Run("js", code));
-            result.Should().Contain($"<pre><code class=\"language-js\">#{code}#</code></pre>");
+            result.Should().Contain($"<pre><code class=\"language-js hljs\">#{code}#</code></pre>");
         }
 
         [Fact]
