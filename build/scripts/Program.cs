@@ -18,12 +18,12 @@ namespace Build
 {
     static class Program
     {
-        static Task Main(string[] args)
+        static void Main(string[] args)
         {
-            var options = ParseOptions<Options>(args);
+            var options = ParseOptions<RunnerOptions>(args);
             
             var gitversion = GetGitVersion(ExpandPath("./"));
-            var commandBuildArgs = $"--configuration {options.Configuration} /p:Platform=\"Any CPU\"";
+            var commandBuildArgs = $"--configuration {options.Config} /p:Platform=\"Any CPU\"";
             var commandBuildArgsWithVersion = commandBuildArgs;
             if (!string.IsNullOrEmpty(gitversion.PreReleaseTag))
             {
@@ -72,15 +72,7 @@ namespace Build
 
             Target("ci", DependsOn("update-version", "build", "test", "deploy"));
 
-            return Run(options);
-        }
-
-        // ReSharper disable ClassNeverInstantiated.Local
-        class Options : RunnerOptions
-        // ReSharper restore ClassNeverInstantiated.Local
-        {
-            [PowerArgs.ArgShortcut("config"), PowerArgs.ArgDefaultValue("Release")]
-            public string Configuration { get; set; }
+            Execute(options);
         }
     }
 }
