@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Jurassic" Version="3.0.0" />
-    <PackageReference Include="Markdig" Version="0.18.0" />
+    <PackageReference Include="Markdig" Version="0.26.0" />
   </ItemGroup>
 
   <ItemGroup>
